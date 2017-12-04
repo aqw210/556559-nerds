@@ -20,7 +20,7 @@
           <li><a href="catalog.html">Магазин</a></li>
           <li><a href="#">Контакты</a></li>
         </ul>
-        <a class="cart" href="#">Корзина</a>
+        <a class="cart" href="">Корзина</a>
       </nav>
       <section class="slider">
         <h2 class="visually-hidden">Наши преимущества</h2>
@@ -142,6 +142,7 @@
   <footer class="main-footer">
     <section class="contacts">
       <h2 class="visually-hidden">Наши контакты</h2>
+      <div class="google-map"></div>
       <div class="container">
         <div class="adress">
           <h3>Nёrds Design Studio</h3>
@@ -150,7 +151,7 @@
             <br> ул. Б. Конюшенная, д. 19/8
           </p>
           <p>тел. +7 (812) 275-75-75</p>
-          <a class="button write-button" href="#">Напишите нам</a>
+          <a class="button write-button" href="writeus.html">Напишите нам</a>
         </div>
       </div>
     </section>
@@ -185,25 +186,26 @@
     </div>
   </footer>
   <!--Обратная связь-->
-  <section class="modal-content">
-    <button class="modal-content-close" type="button" title="Закрыть">Закрыть</button>
+  <section class="modal">
     <h2>Напишите нам</h2>
     <form class="write-form" action="https://echo.htmlacademy.ru" method="post">
-      <div class="name-email">
-        <fieldset>
-          <label for="name">Ваше имя:</label>
-          <input type="text" id="name" name="login" placeholder="Представьтесь, пожалуйста" required>
-        </fieldset>
-        <fieldset>
-          <label for="mail">Ваш e-mail:</label>
-          <input type="text" id="mail" name="mail" placeholder="Для отправки ответа" required>
-        </fieldset>
-      </div>
-      <label for="text">Текст письма:</label>
-      <textarea id="text" placeholder="В свободной форме" name="text"></textarea>
-      <button class="button" type="submit">Отправить</button>
+      <p class="contacts-form-item">
+        <label for="name">Ваше имя:</label>
+        <input id="name" type="text" name="name" placeholder="Представьтесь, пожалуйста">
+      </p>
+      <p class="contacts-form-item">
+        <label for="email">Ваш e-mail:</label>
+        <input id="email" type="email" name="email" placeholder="Для отправки ответа">
+      </p>
+      <p class="contacts-form-item">
+        <label for="text">Текст письма:</label>
+        <textarea id="text" name="text" placeholder="В свободной форме"></textarea>
+      </p>
+      <button class="button form-button" type="submit">Отправить</button>
     </form>
+    <button class="modal-close" type="button"><span class="visually-hidden">Закрыть</span></button>
   </section>
-  <script src="js/popupmini.js"></script>
+  <script src="js/popup.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2RaehTBDVjVv8p2ddSLy1BYneWAsCsts&callback=initMap" type="text/javascript"></script>
 </body>
 </html>

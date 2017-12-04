@@ -44,45 +44,45 @@
                   <input name="min-price" type="text" value="0">
                 </label>
                 <label class="max-price">ДО
-                  <input name="max-price" type="text" value="15000">
+                  <input name="max-price" type="text" value="15 000">
                 </label>
               </div>
             </div>
             <p class="filter-name">Сетка:</p>
             <fieldset class="radio">
               <p>
-                <input type="radio" id="adaptiv" name="set" value="adaptive" checked>
+                <input class="visually-hidden filter-disable" type="radio" id="adaptiv" name="set" value="adaptive" checked>
                 <label for="adaptiv">Адаптивная</label>
               </p>
               <p>
-                <input type="radio" id="fix" name="set" value="fix">
+                <input class="visually-hidden filter-disable" type="radio" id="fix" name="set" value="fix">
                 <label for="fix">Фиксированная</label>
               </p>
               <p>
-                <input type="radio" id="rub" name="set" value="rubber">
+                <input class="visually-hidden filter-disable" type="radio" id="rub" name="set" value="rubber" disabled>
                 <label for="rub">Резиновая</label>
               </p>
             </fieldset>
             <p class="filter-name">Особенности:</p>
             <fieldset class="check">
               <p>
-                <input type="checkbox" id="slider" name="slider" checked>
+                <input class="visually-hidden filter-disable" type="checkbox" id="slider" name="slider" checked>
                 <label for="slider">Слайдер</label>
               </p>
               <p>
-                <input type="checkbox" id="features" name="features">
+                <input class="visually-hidden filter-disable" type="checkbox" id="features" name="features">
                 <label for="features">Блок преимуществ</label>
               </p>
               <p>
-                <input type="checkbox" id="news" name="news" checked>
+                <input class="visually-hidden filter-disable" type="checkbox" id="news" name="news" checked>
                 <label for="news">Новости</label>
               </p>
               <p>
-                <input type="checkbox" id="gallery" name="gallery">
+                <input class="visually-hidden filter-disable" type="checkbox" id="gallery" name="gallery">
                 <label for="gallery">Галерея</label>
               </p>
               <p>
-                <input type="checkbox" id="shopping-cart" name="shopping-cart">
+                <input class="visually-hidden filter-disable" type="checkbox" id="shopping-cart" name="shopping-cart">
                 <label for="shopping-cart">Корзина</label>
               </p>
             </fieldset>
@@ -105,44 +105,57 @@
           <div class="all-products">
             <div class="product-item">
               <div class="product-info">
-                <h3>Sedona</h3>
-                <p>Информационный сайт для туристов</p>
-                <a class="button catalog-item-button">9 900 руб.</a>
+                <a href="sedona.html">
+                  <h3>Sedona</h3>
+                </a>
+                <p>Информационный сайт
+                  <br> для туристов</p>
+                <button class="button" type="button">9 900 руб.</button>
               </div>
             </div>
             <div class="product-item">
               <div class="product-info">
-                <h3>Pink App</h3>
+                <a href="pinkapp.html">
+                  <h3>Pink App</h3>
+                </a>
                 <p>Продуктовый лендинг приложения для iOS и Android</p>
-                <a class="button catalog-item-button">9 900 руб.</a>
+                <button class="button" type="button">9 900 руб.</button>
               </div>
             </div>
             <div class="product-item">
               <div class="product-info">
-                <h3>Barbershop</h3>
+                <a href="barbershop.html">
+                  <h3>Barbershop</h3>
+                </a>
                 <p>Сайт салона красоты. Для мужчин, да.</p>
-                <a class="button catalog-item-button">9 900 руб.</a>
+                <button class="button" type="button">9 900 руб.</button>
               </div>
             </div>
             <div class="product-item">
               <div class="product-info">
-                <h3>Mishka</h3>
+                <a href="mishka.html">
+                  <h3>Mishka</h3>
+                </a>
                 <p>Интернет-магазин вязаных игрушек</p>
-                <a class="button catalog-item-button">9 900 руб.</a>
+                <button class="button" type="button">9 900 руб.</button>
               </div>
             </div>
             <div class="product-item">
               <div class="product-info">
-                <h3>A Plus</h3>
+                <a href="aplus.html">
+                  <h3>A Plus</h3>
+                </a>
                 <p>Лендинг курсов повышения квалификации</p>
-                <a class="button catalog-item-button">9 900 руб.</a>
+                <button class="button" type="button">9 900 руб.</button>
               </div>
             </div>
             <div class="product-item">
               <div class="product-info">
-                <h3>Кваст</h3>
+                <a href="kvast.html">
+                  <h3>Кваст</h3>
+                </a>
                 <p>Промо-сайт производителя крафтового кваса</p>
-                <a class="button catalog-item-button">9 900 руб.</a>
+                <button class="button" type="button">9 900 руб.</button>
               </div>
             </div>
           </div>
@@ -159,6 +172,7 @@
   <footer class="main-footer">
     <section class="contacts">
       <h2 class="visually-hidden">Наши контакты</h2>
+      <div class="google-map"></div>
       <div class="container">
         <div class="adress">
           <h3>Nёrds Design Studio</h3>
@@ -167,7 +181,7 @@
             <br> ул. Б. Конюшенная, д. 19/8
           </p>
           <p>тел. +7 (812) 275-75-75</p>
-          <a class="button write-button" href="#">Напишите нам</a>
+          <a class="button write-button" href="writeus.html">Напишите нам</a>
         </div>
       </div>
     </section>
@@ -202,25 +216,26 @@
     </div>
   </footer>
   <!--Обратная связь-->
-  <section class="modal-content">
-    <button class="modal-content-close" type="button" title="Закрыть">Закрыть</button>
+  <section class="modal">
     <h2>Напишите нам</h2>
     <form class="write-form" action="https://echo.htmlacademy.ru" method="post">
-      <div class="name-email">
-        <fieldset>
-          <label for="name">Ваше имя:</label>
-          <input type="text" id="name" name="login" placeholder="Представьтесь, пожалуйста" required>
-        </fieldset>
-        <fieldset>
-          <label for="mail">Ваш e-mail:</label>
-          <input type="text" id="mail" name="mail" placeholder="Для отправки ответа" required>
-        </fieldset>
-      </div>
-      <label for="text">Текст письма:</label>
-      <textarea id="text" placeholder="В свободной форме" name="text"></textarea>
-      <button class="button" type="submit">Отправить</button>
+      <p class="contacts-form-item">
+        <label for="name">Ваше имя:</label>
+        <input id="name" type="text" name="name" placeholder="Представьтесь, пожалуйста">
+      </p>
+      <p class="contacts-form-item">
+        <label for="email">Ваш e-mail:</label>
+        <input id="email" type="email" name="email" placeholder="Для отправки ответа">
+      </p>
+      <p class="contacts-form-item">
+        <label for="text">Текст письма:</label>
+        <textarea id="text" name="text" placeholder="В свободной форме"></textarea>
+      </p>
+      <button class="button form-button" type="submit">Отправить</button>
     </form>
+    <button class="modal-close" type="button"><span class="visually-hidden">Закрыть</span></button>
   </section>
-  <script src="js/popupmini.js"></script>
+  <script src="js/popup.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2RaehTBDVjVv8p2ddSLy1BYneWAsCsts&callback=initMap" type="text/javascript"></script>
 </body>
 </html>
