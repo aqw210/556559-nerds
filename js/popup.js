@@ -1,51 +1,65 @@
-﻿ var link =document.querySelector(".write-button");
+﻿var Button = document.querySelector(".write-button");
+var Popup = document.querySelector(".modal");
+var Сlose = Popup.querySelector(".modal-close");
+var Form = Popup.querySelector(".write-form");
+var NameFocus = Popup.querySelector("[name=name]");
+var EmailFocus = Popup.querySelector("[name=email]");
+var TextFocus = Popup.querySelector("[name=text]");
+var NameStorage = localStorage.getItem("name");
+var EmailStorage = localStorage.getItem("email");
 
-    var popup = document.querySelector(".modal-content");
-    var close = popup.querySelector(".modal-content-close");
+Button.addEventListener("click", function (evt) {
+  evt.preventDefault();
+  Popup.classList.add("modal-show");
+  if (NameStorage) {
+    NameFocus.value = NameStorage;
+    EmailFocus.focus();
+    if (EmailStorage) {
+      EmailFocus.value = EmailStorage;
+      TextFocus.focus();
+    }
+  } else {
+    NameFocus.focus();
+  }
+});
 
-    var form = popup.querySelector("form");
-    var login = popup.querySelector("[name=login]");
-    var mail = popup.querySelector("[name=mail]");
+Сlose.addEventListener("click", function (evt) {
+  evt.preventDefault();
+  Popup.classList.remove("modal-show");
+  Popup.classList.remove("modal-error");
+});
 
-    var storage = localStorage.getItem("login");
+Form.addEventListener("submit", function (evt) {
+  if (!NameFocus.value || !EmailFocus.value || !TextFocus.value) {
+    evt.preventDefault();
+    Popup.classList.remove("modal-error");
+    Popup.offsetWidth = Popup.offsetWidth;
+    Popup.classList.add("modal-error");
+  } else {
+    localStorage.setItem("name", NameFocus.value);
+    localStorage.setItem("email", EmailFocus.value);
+  }
+});
 
-    link.addEventListener("click", function(evt) {
-      event.preventDefault();
-      popup.classList.add("modal-content-show");
-      login.focus();
+window.addEventListener("keydown", function (evt) {
+  if (evt.keyCode === 27) {
+    if (Popup.classList.contains("modal-show")) {
+    Popup.classList.remove("modal-show");
+    Popup.classList.remove("modal-error");
+    }
+  }
+});
 
-      if (storage) {
-        login.value = storage;
-        mail.focus();
-      } else {
-        login.focus();
-      }
-
-    });
-
-    close.addEventListener("click", function(evt) {
-      event.preventDefault();
-      popup.classList.remove("modal-content-show");
-      popup.classList.remove("modal-error");
-    });
-
-    form.addEventListener("submit", function(evt) {
-      if (!login.value || !mail.value) {
-        evt.preventDefault();
-        console.log("Нужно ввести логин и email");
-        popup.classList.remove("modal-error");
-        popup.offsetWidth = popup.offsetWidth;
-        popup.classList.add("modal-error");
-      } else {
-        localStorage.setItem("login", login.value);
-      }
-    });
-
-    window.addEventListener("keydown", function(evt) {
-      if (evt.keyCode === 27) {
-        if (popup.classList.contains("modal-content-show")) {
-          popup.classList.remove("modal-content-show");
-          popup.classList.remove("modal-error");
-        }
-      }
-    });
+function initMap() {
+  var nerds = {lat: 59.938730, lng: 30.323110};
+  var center = {lat: 59.9391120, lng: 30.321520};
+  var map = new google.maps.Map(document.querySelector('.google-map'), {
+    zoom: 17,
+    center: center
+  });
+  var marker = new google.maps.Marker({
+    position: nerds,
+    map: map,
+    icon: 'img/map-marker.png'
+  });
+}
