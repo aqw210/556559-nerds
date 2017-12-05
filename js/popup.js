@@ -1,6 +1,6 @@
 ﻿var Button = document.querySelector(".write-button");
 var Popup = document.querySelector(".modal");
-var Сlose = Popup.querySelector(".modal-close");
+var Close = Popup.querySelector(".modal-close");
 var Form = Popup.querySelector(".write-form");
 var NameFocus = Popup.querySelector("[name=name]");
 var EmailFocus = Popup.querySelector("[name=email]");
@@ -23,7 +23,7 @@ Button.addEventListener("click", function (evt) {
   }
 });
 
-Сlose.addEventListener("click", function (evt) {
+Close.addEventListener("click", function (evt) {
   evt.preventDefault();
   Popup.classList.remove("modal-show");
   Popup.classList.remove("modal-error");
