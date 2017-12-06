@@ -36,6 +36,7 @@ img {
 
 .button {
   display: inline-block;
+  vertical-align: baseline;
   padding: 16px 55px;
   font-weight: 500;
   font-size: 16px;
@@ -244,6 +245,7 @@ img {
 
 .slider-slogan {
   display: inline-block;
+  vertical-align: baseline;
   max-width: 560px;
   margin: 0;
   margin-bottom: 27px;
@@ -291,6 +293,7 @@ img {
 .slider-controls label {
   position: relative;
   display: inline-block;
+  vertical-align: baseline;
   width: 18px;
   height: 18px;
   padding: 8px;
@@ -1230,11 +1233,14 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 36px;
   margin-right: 40px;
+  padding-top: 41px;
   width: 360px;
   height: 616px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   border-radius: 5px 5px 0 0;
-  margin-top: 36px;
   background: #e9e9e9 url(../img/img-sedona.jpg) no-repeat 0 40px;
 }
 
@@ -1284,8 +1290,8 @@ img {
   position: absolute;
   background-color: #eeeeee;
   width: 360px;
-  height: 231px;
-  overflow: auto;
+  min-height: 231px;
+  max-height: 576px;
   text-align: center;
   bottom: 0;
   left: 0;
@@ -1306,15 +1312,26 @@ img {
 }
 
 .product-info p {
+  position: relative;
   padding-left: 60px;
   padding-right: 60px;
   margin-top: 15px;
+  margin-bottom: 100px;
+  min-height: 60px;
+  max-height: 400px;
   line-height: 18px;
+  overflow: auto;
+}
+
+.product-info .psedona {
+  padding-left: 90px;
+  padding-right: 90px;
 }
 
 .product-info .button {
   position: absolute;
   left: 80px;
+  right: 80px;
   padding: 15px 60px;
   bottom: 43px;
   font-weight: 500;
@@ -1333,6 +1350,7 @@ img {
 .product-info .button:active {
   color: #ffffff;
   background-color: #d7373b;
+  -webkit-box-shadow: inset 0 3px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -1340,8 +1358,8 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .paginator a {
@@ -1356,10 +1374,12 @@ img {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
+  min-height: 50px;
   margin-top: 27px;
   margin-bottom: 10px;
+  padding: 0 19px;
+  padding-left: 19px;
+  padding-right: 19px;
   line-height: 18px;
   text-transform: uppercase;
   color: #000000;
@@ -1372,14 +1392,16 @@ img {
   margin-right: 11px;
 }
 
-.paginator .disabled {
-  background-color: #ffffff;
-  border: 3px solid #dbdbdb;
+.paginator .next {
+  padding-right: 80px;
+  padding-left: 80px;
 }
 
-.paginator .next {
-  width: 260px;
-  height: 50px;
+.paginator .disabled {
+  padding: 12px 18px;
+  background-color: #ffffff;
+  border: 3px solid #dbdbdb;
+  cursor: pointer;
 }
 
 .paginator a:hover {
